@@ -56,3 +56,70 @@ ex:QueenAuthority
 My enrichment file is available here:  
 <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
 </p>
+<section id="la-dolce-vita">
+  <h2>La Dolce Vita — Fashion and Cultural Symbolism</h2>
+
+  <h3>Topic</h3>
+  <p>
+    My contribution focused on analyzing the cultural and fashion heritage related to the film 
+    <em>La Dolce Vita (1960)</em> by <strong>Federico Fellini</strong>. I investigated the intersection of Italian cinema and costume design, 
+    focusing on garments linked to the film's iconic fashion style.
+  </p>
+
+  <h3>Fashion Object: Dress from Museo Nazionale del Cinema</h3>
+  <p>
+    I selected a dress cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em> 
+    (ID: <code>0900287181</code>). This “abito da sera anni '60” (evening dress from the 1960s) is held at 
+    the Museo Nazionale del Cinema and stylistically aligns with the fashion depicted in <em>La Dolce Vita</em>.
+  </p>
+
+  <h3>SPARQL Analysis</h3>
+  <p>
+    Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
+    <code>0900287181</code>. The object includes metadata such as title and location, but lacked material and symbolic subject annotations. 
+    I enriched the data with material, technique, and contextual meaning based on LLM outputs.
+  </p>
+
+  <h3>LLM Prompts and Answers</h3>
+  <ul>
+    <li><strong>Prompt 1:</strong> What does the 1960s evening dress represent in the context of Italian cinema and fashion, especially in relation to <em>La Dolce Vita</em>?
+      <br><strong>Answer:</strong> Elegance, sensuality, and glamorous excess of Rome’s elite in the 1960s.
+    </li>
+    <li><strong>Prompt 2:</strong> How does this style reflect the cultural context of Fellini’s film?
+      <br><strong>Answer:</strong> It merges celebrity culture with haute couture and critiques social superficiality.
+    </li>
+    <li><strong>Prompt 3:</strong> What materials were typical of dresses in the film?
+      <br><strong>Answer:</strong> Black silk, satin, lace; with draping and bold silhouettes.
+    </li>
+    <li><strong>Prompt 4:</strong> What does a black evening gown symbolize in Italian cinema?
+      <br><strong>Answer:</strong> Power, mystery, femininity, and the diva archetype.
+    </li>
+    <li><strong>Prompt 5:</strong> Could this dress represent Sylvia’s character?
+      <br><strong>Answer:</strong> Yes, symbolically — it reflects the visual language and themes embodied by Sylvia.
+    </li>
+  </ul>
+
+  <h3>Enrichment</h3>
+  <pre><code>
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0900287181&gt;
+    arco:material "black silk" ;
+    arco:technique "cinched waist and draping" ;
+    a-cd:hasSubject ex:LaDolceVitaGlamour .
+
+ex:LaDolceVitaGlamour
+    a a-cd:Subject ;
+    rdfs:label "Visual style and glamour of Italian cinema in the 1960s, inspired by La Dolce Vita" .
+  </code></pre>
+
+  <h3>Download RDF File</h3>
+  <p>
+    <a href="https://github.com/ltvmur/costume-heritage-project/blob/main/data/la-dolce-vita-dress.ttl" target="_blank">
+      Download TTL file
+    </a>
+  </p>
+</section>
